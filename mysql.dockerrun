@@ -1,0 +1,19 @@
+docker run -d \
+  --name mysql_database \
+  -p 14316:3308 \
+  -e MYSQL_USER=natasha \
+  -e MYSQL_PASSWORD='user@123@123?' \
+  -e MYSQL_DATABASE=my_db \
+  -e MYSQL_ROOT_PASSWORD='server@123@?' \
+  mysql:latest \
+  --port=3308
+
+
+docker exec -it mysql_database bash
+bash-5.1# 
+bash-5.1# mysql -u natasha -p --port=3308 my_db
+
+mysql> show databases;
+
+bash-5.1# mysql -uroot -p
+
