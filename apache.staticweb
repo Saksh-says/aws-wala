@@ -1,0 +1,12 @@
+3. Deploy "ubuntu/apache2" image & host some simple static content in document root "/var/www" and expose external port as 9001:80? 
+
+docker run -d \
+  --name apache_server \
+  -p 9001:80 \
+  ubuntu/apache2
+
+docker exec apache_server /bin/bash
+
+root@3b158e5e75bc:/# echo "<h1>Hello World this is saksh. welcome to apache document root</h1>">/var/www/html/index.html
+
+http://localhost:9001/
