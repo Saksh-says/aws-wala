@@ -1,0 +1,13 @@
+Create a pod with image nginx called nginx and expose traffic on port 8000.
+
+kubectl run nginx \
+  --image=nginx \
+  --port=80
+
+kubectl expose pod nginx \
+  --type=NodePort \
+  --port=8000 \
+  --target-port=80
+
+kubectl get pods
+kubectl get svc

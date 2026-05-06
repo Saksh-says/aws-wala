@@ -1,0 +1,6 @@
+Q.4 Create a "busybox" Docker container that echoes 'hello world' and then exits.
+
+docker run --rm busybox echo "hello world"
+--rm → Automatically removes the container after it exits.
+
+
