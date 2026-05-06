@@ -17,3 +17,12 @@ mysql> show databases;
 
 bash-5.1# mysql -uroot -p
 
+=================================================================
+Q.1 Deploy a MySQL container using the following characteristics:						      [10 marks]
+	•Name: mysql_database
+	•Port forward: yes, from host port 14316 to container port 3308
+	•Environment variables:
+		◦ MYSQL_USER: natasha;
+		◦ MYSQL_PASSWORD: user@123@123?;
+		◦ MYSQL_DATABASE: my_db;
+		◦ MYSQL_ROOT_PASSWORD: server@123@?
