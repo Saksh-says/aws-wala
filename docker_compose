@@ -1,0 +1,65 @@
+docker compose up   Start all services
+docker compose up -d   Run in background
+docker compose down   Stop and remove all
+docker compose ps    List services
+
+
+mysql using docker compose
+-------------------
+version: '3'
+services:
+  web:
+    image: nginx
+    ports:
+      - "8080:80"
+
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+
+
+
+-------------------------
+Dockerfile
+FROM eclipse-temurin:17-jdk-alpine
+
+WORKDIR  /my-compose-app
+
+COPY    HelloWorld.java  /my-compose-app
+
+RUN   javac   HelloWorld.java
+
+CMD   ["java",   "HelloWorld"]
+
+
+HelloWorld.java	
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+
+
+
+docker      compose       up
+-------------------------------------
+
+Tag
+
+docker login
+
+docker    tag    my-ditiss-c   newdelthis/my-ditiss-c:1.0
+
+docker   push    newdelthis/my-ditiss-c:1.0
+
+docker 	save 		my-ditiss-c	   -o	cprogback.tar
+
+
